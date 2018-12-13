@@ -3,7 +3,6 @@
 #include <boost/program_options.hpp>
 #include "asio_ethernet.hpp"
 
-
 #ifdef ASIO_STANDALONE
     namespace io = asio;
 #else
