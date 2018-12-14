@@ -51,6 +51,7 @@ class ethernet {
     private:
         bool macaddr_ipv4() {
             struct auto_close {
+                auto_close() : fd(-1) { }
                ~auto_close() { if (fd != -1) close(fd); }
                int fd;
             } handle;
@@ -85,7 +86,7 @@ class ethernet {
         }
         
     private:
-        io::ip::tcp::endpoint endpoint;
+        io::ip::tcp::endpoint   endpoint;
         bytes_type              mac;
         bool                    valid;
         std::string             devicename;

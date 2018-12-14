@@ -12,13 +12,13 @@ add_custom_target(headers SOURCES ${HeaderFiles})
 
 include_directories(.)
 
-find_package(Boost 1.53.0 COMPONENTS system program_options filesystem REQUIRED)
+find_package(Boost 1.53.0 COMPONENTS system program_options REQUIRED)
 find_package(Threads)
 
 if(Boost_FOUND)
     aux_source_directory(. SRC_LIST)
     add_executable(${PROJECT_NAME} ${SRC_LIST})
-    target_link_libraries(${PROJECT_NAME} ${Boost_LIBRARIES} ${CMAKE_THREAD_LIBS_INIT})
+    target_link_libraries(${PROJECT_NAME} ${Boost_LIBRARIES} ${CMAKE_THREAD_LIBS_INIT} mosquittopp)
 else()
     message(FATAL_ERROR "boost library not found.")
 endif()
