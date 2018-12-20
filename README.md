@@ -16,7 +16,7 @@ Adjust IP addresses (should be fixed/static addresses), topic and messages accor
 ### Redirect dash button request
 Redirect host names the dash button is connecting to, to the host the dashbutton interceptor is running.
 
-![OpenWRT settings](https://raw.githubusercontent.com/thkdev/dashbutton/doc/wrt-hostnames.png)
+![OpenWRT settings](https://raw.githubusercontent.com/THKDev/dashbutton/master/doc/wrt-hostnames.png)
 
 Currently following host names are used
 * parker-gw-eu.amazon.com
