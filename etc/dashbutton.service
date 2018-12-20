@@ -1,0 +1,11 @@
+[Unit]
+Description=Dash button interceptor
+After=syslog.target network.target
+
+[Service]
+Type=simple
+ExecStart=/usr/local/bin/dashbutton --config /usr/local/etc/dashbutton/dashbutton.xml
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target

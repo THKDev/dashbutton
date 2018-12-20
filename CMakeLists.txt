@@ -12,6 +12,11 @@ add_custom_target(headers SOURCES ${HeaderFiles})
 
 include_directories(.)
 
+# use standalone version of ASIO (CentOS7 on arm64 has only a old one)
+include_directories(asio/asio/include)
+add_definitions(-DASIO_STANDALONE=1)
+
+
 find_package(Boost 1.53.0 COMPONENTS system program_options REQUIRED)
 find_package(Threads)
 

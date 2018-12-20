@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dashbutton>
+  <server>
+    <port>443</port>
+    <device>eth0</device>
+  </server>
+  <mqtt>
+    <host>mqtt</host>
+    <port>1883</port>
+  </mqtt>
+  <clients>
+    <client>
+      <ip>10.100.100.10</ip>
+      <topic>/your/topic</topic>
+      <message>{"command":"TOGGLE","timestamp":"%ld"}</message>
+    </client>
+    <client>
+      <ip>10.100.100.11</ip>
+      <topic>/your/topic</topic>
+      <message>{"command":"TOGGLE","timestamp":"%ld"}</message>
+    </client>
+  </clients>
+</dashbutton>
+

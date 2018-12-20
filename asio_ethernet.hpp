@@ -1,7 +1,7 @@
 #pragma once
 
 #ifdef ASIO_STANDALONE
-    #include <asio/asio.hpp>
+    #include <asio.hpp>
     namespace io = asio;
 #else
     #include <boost/asio.hpp>
@@ -19,7 +19,7 @@ class ethernet {
         typedef io::detail::array<unsigned char, 6> bytes_type;
         
     public:
-        ethernet(io::ip::tcp::endpoint epoint, const std::string& devname = "enp3s0")
+        ethernet(io::ip::tcp::endpoint epoint, const std::string& devname = "eth0")
         : endpoint(epoint),
           devicename(devname),
           valid(false) {
