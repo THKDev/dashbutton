@@ -33,7 +33,7 @@ Additionaly NTP server of amazon can be blocked. Dash button is asking for curre
 ### Start dash button interceptor
 * `systemctl start dashbutton`
 * `systemctl enable dashbutton` keep dash button running after restarting
-* `systemctl enable dashbutton` check that dashbutton is running and listen for messages
+* `systemctl status dashbutton` check that dashbutton is running and listen for messages
   
 ## Build
 Using [ASIO](https://github.com/chriskohlhoff/asio) in STANDALONE mode because CentOS 7 on arm64 providing an older version of boost::asio.

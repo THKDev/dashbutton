@@ -54,12 +54,12 @@ class server
             acceptor.async_accept([this](std::error_code ec, io::ip::tcp::socket socket) {
                 try {
                     if (!ec) {
-                        const auto &ip = socket.remote_endpoint().address().to_string();
-                        const auto &dButtonIter = std::find_if(config.buttonList().cbegin(), config.buttonList().cend(), [ip](dashbutton::config::dashbutton_t btn) {
+                        const auto ip = socket.remote_endpoint().address().to_string();
+                        const auto dButtonIter = std::find_if(config.buttonList().cbegin(), config.buttonList().cend(), [&ip](const dashbutton::config::dashbutton_t& btn) {
                             return btn.ip == ip;
                         });
                         if (dButtonIter != config.buttonList().cend()) {
-                            auto pButtonIter = std::find_if(pressedButtonList.begin(), pressedButtonList.end(), [dButtonIter](pressed_dashbutton pBtn) {
+                            auto pButtonIter = std::find_if(pressedButtonList.begin(), pressedButtonList.end(), [&dButtonIter](const pressed_dashbutton& pBtn) {
                                return pBtn.ip == dButtonIter->ip;
                             });
                             
